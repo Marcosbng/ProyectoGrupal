@@ -1,0 +1,44 @@
+###
+## nuevo incorrecto
+POST http://localhost:8090/auth/nuevo HTTP/1.1
+Content-Type: application/json
+
+{
+    "nickname": "prueba",
+    "email": "@",
+    "password": "a",
+    "roles": ["admin"]
+}
+
+###
+## nuevo ok
+POST http://localhost:8090/auth/nuevo HTTP/1.1
+Content-Type: application/json
+
+{
+    "nickname": "hugo",
+    "nombre": "Hugo Sanchis",
+    "email": "hugo.admin@gmail.com",
+    "password": "NoTeLoDigo@1",
+    "roles": ["admin"]
+}
+
+###
+## login ok
+POST http://localhost:8090/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "nickname": "marcos",
+    "password": "NoTeLoDigo@1"
+}
+
+###
+##  con JWGT (admin)
+GET http://localhost:8090/api/v1/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodWdvIiwiaWF0IjoxNzA2ODcwODM1LCJleHAiOjE3MDY5MDY4MzV9.-nQ1bZRcsHXA20n0_G6X81mWze_1L_K_a6t7csTiQEw
+
+###
+##  con JWGT (user)
+GET http://localhost:8090/api/v1/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJjb3MiLCJpYXQiOjE3MDY4NzA4NTgsImV4cCI6MTcwNjkwNjg1OH0.VksIudHv8ZuVqJbtuu37wbirYwWkW5DO81WyQCIN_1s
