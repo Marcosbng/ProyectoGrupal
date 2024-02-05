@@ -16,9 +16,9 @@ POST http://localhost:8090/auth/nuevo HTTP/1.1
 Content-Type: application/json
 
 {
-    "nickname": "hugo",
-    "nombre": "Hugo Sanchis",
-    "email": "hugo.admin@gmail.com",
+    "nickname": "edu",
+    "nombre": "Edu Valls",
+    "email": "eduvalls@gmail.com",
     "password": "NoTeLoDigo@1",
     "roles": ["admin"]
 }
@@ -29,7 +29,7 @@ POST http://localhost:8090/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "nickname": "marcos",
+    "nickname": "edu",
     "password": "NoTeLoDigo@1"
 }
 
