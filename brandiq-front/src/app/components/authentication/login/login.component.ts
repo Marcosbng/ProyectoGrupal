@@ -15,13 +15,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+
   nickname: string = '';
   password: string = '';
   errorMessage: string = '';
 
   constructor(private usersService: UsersService, private router: Router) {}
 
-  login() {
+  onSubmit() {
     const user = { nickname: this.nickname, password: this.password };
 
     // Utiliza el servicio para realizar la solicitud HTTP y manejar la lógica
