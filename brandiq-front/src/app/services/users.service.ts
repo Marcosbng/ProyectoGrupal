@@ -24,7 +24,7 @@ export class UsersService {
     nombre: string,
     email: string,
     password: string,
-    confirmPassword: string,
+    // confirmPassword: string,
   }): Observable<any> {
      return this.http.post('http://localhost:8090/auth/nuevo', user);
   }
