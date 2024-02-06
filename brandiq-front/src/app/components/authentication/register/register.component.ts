@@ -32,7 +32,13 @@ export class RegisterComponent {
         return;
       }
 
-      const user = { nickname: this.nickname, nombre: this.nombre ,email: this.email, password: this.password, confirmPassword: this.confirmPassword };
+      const user = { 
+        nickname: this.nickname, 
+        nombre: this.nombre, 
+        email: this.email, 
+        password: this.password, 
+        // confirmPassword: this.confirmPassword 
+      };
 
           // Utiliza el servicio para realizar la solicitud HTTP y manejar la lógica
           this.usersService.register(user).subscribe({
