@@ -1,28 +1,25 @@
-// login.component.ts
-import { Component, Injector } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { UsersService } from '../../../services/users.service';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink],
+  imports: [RouterLink, FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-
   nickname: string = '';
   password: string = '';
   errorMessage: string = '';
-
   constructor(private usersService: UsersService, private router: Router) {}
 
-  onSubmit() {
+  login() {
+
     const user = { nickname: this.nickname, password: this.password };
 
     // Utiliza el servicio para realizar la solicitud HTTP y manejar la lógica
