@@ -1,55 +1,30 @@
-<section class="text-center text-lg-start">
-  <div class="container py-4">
-    <div class="row justify-content-center">
-      <!-- Centra el contenido -->
-      <div class="col-lg-6">
-        <div
-          class="card cascading-right"
-          style="
-            background: hsla(0, 0%, 100%, 0.55);
-            backdrop-filter: blur(30px);
-          "
-        >
-          <div class="card-body p-5 shadow-5 text-center">
-            <h2 class="fw-bold mb-5">Sign In</h2>
-            <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-              <div class="mb-4">
-                <!-- Agrega margen inferior -->
-                <label class="form-label" for="nickname">Nickname</label>
-                <input
-                  type="text"
-                  id="nickname"
-                  class="form-control"
-                  name="nickname"
-                  [(ngModel)]="nickname"
-                  required
-                />
-              </div>
-              <div class="mb-4">
-                <!-- Agrega margen inferior -->
-                <label class="form-label" for="contrasena">Password</label>
-                <input
-                  type="password"
-                  id="contrasena"
-                  class="form-control"
-                  name="contrasena"
-                  [(ngModel)]="password"
-                  required
-                />
-              </div>
 
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Sign In
-              </button>
-            </form>
-
-            <!-- Muestra el mensaje de error en rojo y centrado -->
-            <div *ngIf="errorMessage" class="text-danger mt-3">
-              {{ errorMessage }}
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="wrapper">
+  <div class="form-box login">
+    <h2>Login</h2>
+    <div *ngIf="errorMessage" id="loginError" class="text-danger mt-3">
+      {{ errorMessage }}
     </div>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+
+      <div class="input-box">
+        <input type="text" id="nickname" class="form-control" name="nickname" [(ngModel)]="nickname" required />
+        <label>Nickname</label>
+      </div>
+
+      <div class="input-box">
+        <input type="password" id="inputPassword" class="form-control" name="password" [(ngModel)]="password" required />
+        <label>Password</label>
+      </div>
+
+      <button type="submit" id="botonLogin">Login</button>
+
+      <div class="login-register">
+        <p>
+          Don't have an account?
+          <a [routerLink]="['register']" class="register-link">Register</a>
+        </p>
+      </div>
+    </form>
   </div>
-</section>
+</div>
