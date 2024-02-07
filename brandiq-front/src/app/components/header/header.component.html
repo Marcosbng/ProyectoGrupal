@@ -9,22 +9,26 @@
       <li><a href="#">Home</a></li>
       <li><a href="#">¿Cómo jugar?</a></li>
       <li><a href="#">Conócenos</a></li>
+      <li><a href="#">Rankings</a></li>
     </ul>
-    <ul class="navbar-nav-right">
-      <li *ngIf="!userService.isLogged()">
-        <a [routerLink]="['login']" class="btn btn-dark-outline"
-          >Inicia Sesión</a
-        >
-      </li>
-      <li>
-        <a [routerLink]="['register']" class="btn btn-dark btn-dark-outline"
-          >Regístrate</a
-        >
-      </li>
+    <ng-container *ngIf="userService.isLogged()">
+      <ul class="navbar-nav-right">
+       
+          <a [routerLink]="['profile']" class="dropdown-item" >Profile</a>
+          <a (click)="logout()" class="dropdown-item" href="#">Logout</a>
+          <a>Estadisticas</a>
 
-      <li>
-        <a (click)="logout()" class="btn btn-dark btn-dark-outline">logout</a>
-      </li>
-    </ul>
+      </ul>
+    </ng-container>
+    <ng-container *ngIf="!userService.isLogged()">
+      <ul class="navbar-nav-right">
+        <li>
+          <a [routerLink]="['login']" class="btn btn-dark-outline">Inicia Sesión</a>
+        </li>
+        <li>
+          <a [routerLink]="['register']" class="btn btn-dark btn-dark-outline">Regístrate</a>
+        </li>
+      </ul>
+    </ng-container>
   </div>
 </nav>
