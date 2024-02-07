@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { UsersService } from '../../../services/users.service';
 import { Router, RouterLink } from '@angular/router';
@@ -19,11 +18,10 @@ export class LoginComponent {
   constructor(private usersService: UsersService, private router: Router) {}
 
   login() {
-
     const user = { nickname: this.nickname, password: this.password };
 
     // Utiliza el servicio para realizar la solicitud HTTP y manejar la lógica
-    this.usersService.login(user).subscribe({
+    let logged = this.usersService.login(user).subscribe({
       next: (data) => {
         console.log('Respuesta del servidor:', data);
         this.router.navigate(['/']);
