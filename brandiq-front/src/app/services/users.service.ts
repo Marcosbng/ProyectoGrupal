@@ -1,12 +1,14 @@
+// users.service.ts
 import { Injectable } from '@angular/core';
 import { Observable, Subject, map } from 'rxjs';
 import { User } from '../interfaces/user';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
+  constructor(private http: HttpClient) {}
 
   constructor(private http: HttpClient) { }
 
