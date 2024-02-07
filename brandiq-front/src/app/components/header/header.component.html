@@ -11,7 +11,7 @@
       <li><a href="#">Conócenos</a></li>
     </ul>
     <ul class="navbar-nav-right">
-      <li>
+      <li *ngIf="!userService.isLogged()">
         <a [routerLink]="['login']" class="btn btn-dark-outline"
           >Inicia Sesión</a
         >
@@ -20,6 +20,10 @@
         <a [routerLink]="['register']" class="btn btn-dark btn-dark-outline"
           >Regístrate</a
         >
+      </li>
+
+      <li>
+        <a (click)="logout()" class="btn btn-dark btn-dark-outline">logout</a>
       </li>
     </ul>
   </div>
