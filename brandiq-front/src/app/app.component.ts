@@ -10,7 +10,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
   standalone: true,
   imports: [RouterOutlet, CommonModule, HeaderComponent, MainPageComponent, FooterComponent, RouterLink],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'brandiq';

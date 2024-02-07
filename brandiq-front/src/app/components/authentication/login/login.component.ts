@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { UsersService } from '../../../services/users.service';
 import { Router, RouterLink } from '@angular/router';
@@ -9,16 +10,16 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterLink, FormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   nickname: string = '';
   password: string = '';
   errorMessage: string = '';
-
   constructor(private usersService: UsersService, private router: Router) {}
 
   login() {
+
     const user = { nickname: this.nickname, password: this.password };
 
     // Utiliza el servicio para realizar la solicitud HTTP y manejar la lógica
