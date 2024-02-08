@@ -2,7 +2,6 @@ package brandiq.brandiq.model.db;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,8 +16,8 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "usuarios")
-public class UsuarioPerfilDb implements Serializable{
-    
+public class UsuarioPerfilDb implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,7 +25,7 @@ public class UsuarioPerfilDb implements Serializable{
     private String email;
 
     private String password;
-    
+
     private String nickname;
 
     private String nombre;
