@@ -34,8 +34,10 @@ export class UsersService {
       tap((response: any) => {
         // Suponiendo que el servidor devuelve un token en la propiedad 'token'
         const authToken = response.token;
+        const nicknameUsuario = response.nickname;
         // Guardar el token en el localStorage
         localStorage.setItem('authToken', authToken);
+        localStorage.setItem('userNickname', nicknameUsuario);
         // Actualizar el estado de autenticación
         this.isLoggedInSubject.next(true);
       })
@@ -69,5 +71,21 @@ export class UsersService {
     } else {
       return false;
     }
+  }
+
+  getProfile(): Observable<any> {
+    // Obtener el token almacenado en el localStorage
+    const authToken = localStorage.getItem('authToken');
+    const nicknameUsuario = localStorage.getItem('userNickname');
+
+    // Configurar el encabezado de la solicitud con el token
+    const headers = { Authorization: `Bearer ${authToken}` };
+
+    return this.http.get(
+      environment.URL_SPRING + 'api/v1/' + nicknameUsuario + '/profile',
+      {
+        headers,
+      }
+    );
   }
 }

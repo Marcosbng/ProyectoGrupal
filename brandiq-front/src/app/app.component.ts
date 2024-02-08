@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { UsersService } from './services/users.service';
+import { MainComponent } from './components/main/main.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { UsersService } from './services/users.service';
     MainPageComponent,
     FooterComponent,
     RouterLink,
+    MainComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
