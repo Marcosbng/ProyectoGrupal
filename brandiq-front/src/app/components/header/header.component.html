@@ -1,20 +1,35 @@
 <nav class="navbar">
   <div class="navbar_container">
-      <div class="navbar_logo">
-          <a href="#">
-              <img src="/assets/img/logo.png" alt="brandiq">
-          </a>
-      </div>
-      <ul class="navbar-nav-left">
-          <li><a href="#">Home</a></li>
-          <li><a [routerLink]="['rules']">¿Cómo jugar?</a></li>
-          <li><a href="#">Ranking</a></li>
-          <li><a href="#">Conócenos</a></li>
-      </ul>
+    <div class="navbar_logo">
+      <a href="#">
+        <img src="/assets/img/logo.png" alt="brandiq" />
+      </a>
+    </div>
+    <ul class="navbar-nav-left">
+      <li><a href="#">Home</a></li>
+      <li><a [routerLink]="['rules']">¿Cómo jugar?</a></li>
+      <li><a href="#">Conócenos</a></li>
+      <li><a href="#">Rankings</a></li>
+    </ul>
+    <ng-container *ngIf="userService.isLogged()">
       <ul class="navbar-nav-right">
-          <li><a [routerLink]="['userManagement', 'login']" class="btn btn-dark-outline">Inicia Sesión</a></li>
-          <li><a class="btn btn-dark btn-dark-outline">Regístrate</a></li>
+       
+          <a [routerLink]="['profile']" class="dropdown-item" >Profile</a>
+          <a (click)="logout()" class="dropdown-item" href="#">Logout</a>
+          <a>Estadisticas</a>
+
       </ul>
+    </ng-container>
+    <ng-container *ngIf="!userService.isLogged()">
+      <ul class="navbar-nav-right">
+        <li>
+          <a [routerLink]="['login']" class="btn btn-dark-outline">Inicia Sesión</a>
+        </li>
+        <li>
+          <a [routerLink]="['register']" class="btn btn-dark btn-dark-outline">Regístrate</a>
+        </li>
+      </ul>
+    </ng-container>
   </div>
 </nav>
 

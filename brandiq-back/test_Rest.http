@@ -1,5 +1,5 @@
 ###
-## nuevo incorrecto
+## creando nuevo usuario incorrecto
 POST http://localhost:8090/auth/nuevo HTTP/1.1
 Content-Type: application/json
 
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ###
-## nuevo ok
+## creando nuevo usuario
 POST http://localhost:8090/auth/nuevo HTTP/1.1
 Content-Type: application/json
 
@@ -42,3 +42,32 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJodWdvIiwiaWF0IjoxNzA2ODcwO
 ##  con JWGT (user)
 GET http://localhost:8090/api/v1/ HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJjb3MiLCJpYXQiOjE3MDY4NzA4NTgsImV4cCI6MTcwNjkwNjg1OH0.VksIudHv8ZuVqJbtuu37wbirYwWkW5DO81WyQCIN_1s
+
+### USUARIOS ###
+
+###
+
+##  getUsuarioInfoById: Para el perlfil del usuario
+GET http://localhost:8090/api/v1/edu/profile HTTP/1.1 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZHUiLCJpYXQiOjE3MDc0MjA4NjQsImV4cCI6MTcwNzQ1Njg2NH0.nh3idpSvYlvIJiYymEiLzIdVlqvSUTX9NexiRKRxFw8
+###
+
+## getJugadorInfoByNickname: Para las estadisticas del jugador
+GET http://localhost:8090/api/v1/edu/estadisticas HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZHUiLCJpYXQiOjE3MDc0MjA4NjQsImV4cCI6MTcwNzQ1Njg2NH0.nh3idpSvYlvIJiYymEiLzIdVlqvSUTX9NexiRKRxFw8
+###
+
+## Editar el perfil de un Usuario
+PUT http://localhost:8090/auth/update/edu HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZHUiLCJpYXQiOjE3MDc0MjA4NjQsImV4cCI6MTcwNzQ1Njg2NH0.nh3idpSvYlvIJiYymEiLzIdVlqvSUTX9NexiRKRxFw8
+
+{
+    "nombre": "uardet",
+    "nickname": "edu",
+    "email": "uardet@gmail.com",
+}
+
+###

@@ -6,16 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import brandiq.brandiq.security.entity.UsuarioDb;
 import brandiq.brandiq.security.repository.UsuarioRepository;
-
-
 
 @Service
 @Transactional
 public class UsuarioService {
-    
+
     @Autowired
     UsuarioRepository usuarioRepository;
 
