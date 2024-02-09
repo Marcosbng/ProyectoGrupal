@@ -3,15 +3,14 @@ import { LoginComponent } from './components/authentication/login/login.componen
 import { RulesComponent } from './components/rules/rules.component';
 import { BoardComponent } from './components/board/board.component';
 
+import { RegisterComponent } from './components/authentication/register/register.component';
+import { UserProfileComponent } from './components/authentication/user-profile/user-profile.component';
+
 export const routes: Routes = [
-    {
-        path: 'userManagement/:setmode', component: LoginComponent
-    },
-    {
-        path: 'rules', component: RulesComponent
-    },
-    {
-        path: 'board', component: BoardComponent
-    },
+  { path: 'rules', component: RulesComponent },
+  { path: 'board', component: BoardComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile', component: UserProfileComponent },
 ];
 
