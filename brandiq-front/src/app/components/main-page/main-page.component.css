@@ -1,49 +1,40 @@
-.bienvenida {
+.bienvenida, .content-between, .footer {
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
 }
 
-.bienvenida span {
-  text-transform: uppercase;
-  display: block;
+.bienvenida {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.text1 {
-  color: rgb(0, 0, 0);
-  font-size: 100px;
-  font-weight: 700;
-  letter-spacing: 8px;
-  margin-bottom: 20px;
-  background: transparent;
-  position: relative;
-  animation: ani 3s;
-  font-family: 'Courier New', Courier, monospace;
-  /* Fuente rústica, ajusta según tus preferencias */
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
-.text2 {
-  font-size: 30px;
-  color: #9aff6e;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.imagesLogo img {
+  max-width: 500px;
+  max-height: 100px;
 }
 
-@keyframes ani {
+@keyframes rotateAnimation {
   0% {
-    color: black;
-    margin-bottom: -40px;
+    transform: rotate(0deg);
   }
 
-  30% {
-    letter-spacing: 25px;
-    margin-bottom: -40px;
+  50% {
+    transform: rotate(175deg) scale(1.4);
   }
 
-  85% {
-    letter-spacing: 8px;
-    margin-bottom: -40px;
+  100% {
+    transform: rotate(360deg);
   }
+}
+
+.content {
+  animation: rotateAnimation 0.75s linear;
 }
