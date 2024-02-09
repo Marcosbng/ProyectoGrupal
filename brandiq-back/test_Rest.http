@@ -1,5 +1,5 @@
 ###
-## nuevo incorrecto
+## creando nuevo usuario incorrecto
 POST http://localhost:8090/auth/nuevo HTTP/1.1
 Content-Type: application/json
 
@@ -11,14 +11,14 @@ Content-Type: application/json
 }
 
 ###
-## nuevo ok
+## creando nuevo usuario
 POST http://localhost:8090/auth/nuevo HTTP/1.1
 Content-Type: application/json
 
 {
-    "nickname": "edu",
-    "nombre": "Edu Valls",
-    "email": "eduvalls@gmail.com",
+    "nickname": "jaume",
+    "nombre": "Jaume Tuset",
+    "email": "jaume@gmail.com",
     "password": "NoTeLoDigo@1",
     "roles": ["admin"]
 }
@@ -29,7 +29,7 @@ POST http://localhost:8090/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "nickname": "edu",
+    "nickname": "jaume",
     "password": "NoTeLoDigo@1"
 }
 
@@ -46,7 +46,35 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJjb3MiLCJpYXQiOjE3MDY4N
 ### USUARIOS ###
 
 ###
+<<<<<<< HEAD
 ##  getJugadorInfoById
 GET http://localhost:8090/api/v1/edu/profile HTTP/1.1 
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZHUiLCJpYXQiOjE3MDczMTQxMjcsImV4cCI6MTcwNzM1MDEyN30._ogw-_p5grEjGGmn-p-gVShYxBaA-SI5KFxijLvt-kE
+=======
+
+##  getUsuarioInfoById: Para el perlfil del usuario
+GET http://localhost:8090/api/v1/edu/profile HTTP/1.1 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZHUiLCJpYXQiOjE3MDc0MjA4NjQsImV4cCI6MTcwNzQ1Njg2NH0.nh3idpSvYlvIJiYymEiLzIdVlqvSUTX9NexiRKRxFw8
+###
+
+## getJugadorInfoByNickname: Para las estadisticas del jugador
+GET http://localhost:8090/api/v1/edu/estadisticas HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZHUiLCJpYXQiOjE3MDc0MjA4NjQsImV4cCI6MTcwNzQ1Njg2NH0.nh3idpSvYlvIJiYymEiLzIdVlqvSUTX9NexiRKRxFw8
+###
+
+## Editar el perfil de un Usuario
+PUT http://localhost:8090/auth/update/edu HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZHUiLCJpYXQiOjE3MDc0MjA4NjQsImV4cCI6MTcwNzQ1Njg2NH0.nh3idpSvYlvIJiYymEiLzIdVlqvSUTX9NexiRKRxFw8
+
+{
+    "nombre": "uardet",
+    "nickname": "edu",
+    "email": "uardet@gmail.com",
+}
+
+###
+>>>>>>> 379b5d54e190eab1d497b208d67dffb558df0e56
